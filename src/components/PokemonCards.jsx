@@ -11,7 +11,13 @@ function PokemonCards(props) {
       </div>
     );
   }
-  
+  import PropTypes from "prop-types";
+  PokemonCards.propTypes = {
+  character: PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  }).isRequired,
+}
   export default PokemonCards;
 
   
