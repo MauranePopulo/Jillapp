@@ -1,4 +1,3 @@
-// function PokemonCards(props) {
   function PokemonCards({pokemon}) {
   // console.log(props.pokemon.name)
     return (
