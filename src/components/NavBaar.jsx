@@ -1,21 +1,10 @@
-function NavBaar ({ handlePreviousClick, handleNextClick }) {
+function NavBaar ({ pokemonIndex, handlePreviousClick, handleNextClick }) {
+  
 return (<>
+{pokemonIndex === 3 ? alert("pika pikachu !!!") : null}
 <button onClick={handlePreviousClick} > Précédent </button>
 <button onClick={handleNextClick} > Suivant </button>
 </>)
 }
 
-
-
 export default NavBaar;
-
-// function NavBar({actions}) {
-
-//     return (
-
-//         <div>
-//           <button onClick={actions.previous}> Previous </button>
-//           <button onClick={actions.next}>Next </button>
-//         </div>
-//       );
-// }
