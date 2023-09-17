@@ -2,9 +2,11 @@ import PokemonCards from "./components/PokemonCards";
 import { useState } from "react";
 import NavBaar from "./components/NavBaar";
 
-
-function App() {
+export default function App() {
   const [pokemonIndex, setpokemonIndex] = useState(0);
+  const showcasePokemon = (pokemon) => {
+    setpokemonIndex(pokemon.filter((index) => index !== pokemon));
+  };
   const pokemonList = [
     {
         firstName: "bulbasaur",
@@ -31,28 +33,19 @@ function App() {
       },
     ];
 
-  
-  // const [count, setCount] = useState(0);
+  // const handlePreviousClick=()=>{
+  //   if (pokemonIndex > 0)
+  //   setpokemonIndex(pokemonIndex -1)
+  // }
 
-  const handlePreviousClick=()=>{
-    // setCount(count -1)
-    if (pokemonIndex > 0)
-    setpokemonIndex(pokemonIndex -1)
-  }
-
-  const handleNextClick=()=>{
-    // setCount(count +1)
-    if (pokemonIndex < pokemonList.length - 1) 
-    setpokemonIndex(pokemonIndex +1) 
-  }
+  // const handleNextClick=()=>{
+  //   if (pokemonIndex < pokemonList.length - 1) 
+  //   setpokemonIndex(pokemonIndex +1) 
+  // }
   
   return ( <div>
     <PokemonCards pokemon={pokemonList[pokemonIndex]}/>
-    <NavBaar handlePreviousClick={handlePreviousClick} handleNextClick={handleNextClick} />
+    <NavBaar pokemonList={pokemonList} showcasePokemon={showcasePokemon} />
       </div> 
   );
 }
-
-export default App;
-
-

@@ -1,8 +1,20 @@
-function NavBaar ({ handlePreviousClick, handleNextClick }) {
-return (<>
-<button onClick={handlePreviousClick} > Précédent </button>
-<button onClick={handleNextClick} > Suivant </button>
-</>)
+/* eslint-disable react/prop-types */
+function NavBaar ({showcasePokemon, pokemonList }) {
+return (
+
+<>
+      <h1>PokemonGo</h1>
+      <ul>
+        {pokemonList.map((pokemon) => (
+            <li key={pokemonList.firstName}>
+                {pokemon.imgSrc} {pokemon.firstName}
+                <input type="text" defaultValue={pokemon.firstName} />
+                <button onClick={() => showcasePokemon(pokemon)}>Poke</button>
+          </li>
+        ))}
+      </ul>
+    </>
+)
 }
 
 export default NavBaar;
