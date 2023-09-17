@@ -5,7 +5,7 @@ import NavBaar from "./components/NavBaar";
 export default function App() {
   const [pokemonIndex, setpokemonIndex] = useState(0);
   const showcasePokemon = (pokemon) => {
-    setpokemonIndex(pokemon.filter((index) => index !== pokemon));
+    setpokemonIndex(pokemonList.filter((item) => item !== pokemon));
   };
   const pokemonList = [
     {
@@ -43,9 +43,10 @@ export default function App() {
   //   setpokemonIndex(pokemonIndex +1) 
   // }
   
-  return ( <div>
+  return ( 
+  <div>
     <PokemonCards pokemon={pokemonList[pokemonIndex]}/>
-    <NavBaar pokemonList={pokemonList} showcasePokemon={showcasePokemon} />
+    <NavBaar pokemonList={pokemonList} pokemonIndex={pokemonIndex} showcasePokemon={showcasePokemon} />
       </div> 
   );
 }
